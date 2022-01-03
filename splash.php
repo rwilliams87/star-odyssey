@@ -1,3 +1,27 @@
+<?php
+    session_start();
+    include('includes/config.php');
+    $screenflash = '';
+    if (isset($_POST['signin'])) {
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+        $getuserinfo = $connection -> prepare("SELECT * FROM users WHERE email = ?");
+        $getuserinfo -> execute([$email]);
+        $userinfo = $getuserinfo -> fetch(PDO::FETCH_ASSOC);
+        if (!$userinfo) {
+            $screenflash = "Incorrect email address or password.";
+        } else {
+            if (password_verify($password, $userinfo['password'])) {
+                $_SESSION['id'] = $userinfo['id'];
+                header('Location: main/main.php');
+                exit;
+            } else {
+                $screenflash = "Incorrect email address or password.";
+            }
+        }
+    }
+?>
+
 <html>
 <head>
     <title>Star Odyssey</title>
@@ -5,29 +29,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
+    
+    <!-- Stars -->
     <div id='stars'></div>
     <div id='stars2'></div>
     <div id='stars3'></div>
+    <!-- End Stars -->
+
     <div class='container'>
         <div class='formwrapper'>
             <h1 class='letterspacing'>Star Odyssey</h1>
             <h3>Please Enter Your Account Credentials</h3>
-            <input type='text' placeholder='Username...' class='textbox'>
+
+            <!-- Screenflash Area -->
+            <?php if ($screenflash) { ?>
+            <div class='screenflash'><?=$screenflash?></h3></div>
             <div class='spacing'></div>
-            <input type='password' placeholder='Password...' class='textbox'>
-            <div class='spacing'></div>
-            <input type='submit' value='Log In' class='button'>
+            <?php } ?>
+            <!-- End Screenflash Area -->
+
+            <!-- Begin Form -->
+                <form method='post' action='' name='signin'>
+                <input type='text' placeholder='Email Address...' class='textbox' name='email'>
+                <div class='spacing'></div>
+                <input type='password' placeholder='Password...' class='textbox' name='password'>
+                <div class='spacing'></div>
+                <input type='submit' name='signin' value='Log In' class='button'>
+                </form>
+            <!-- End Form -->
+
             <div class='spacing'></div>
             <div class='spacing'></div>
             <div class='centering'>
-                <a href='#'>Sign Up</a>
+                <a href='signup.php'>Sign Up</a>
             </div>
             <div class='spacing'></div>
             <div class='centering'>
-                <a href='#'>Forgot Your Password?</a>
+               <a href='forgotpassword.php'>Forgot Your Password?</a>
             </div>
         </div>
     </div>
 </div>
+
 </body>
 </html>
