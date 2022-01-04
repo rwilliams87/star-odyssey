@@ -92,6 +92,8 @@ h3 {
     align-items: center;
     justify-content: center;
     animation: fadein 1.5s;
+    top: 0px;
+    left: 0px;
 }
 
 @media only screen and (max-width: 600px) {
@@ -125,11 +127,15 @@ h3 {
         align-items: flex-start;
         justify-content: center;
         animation: fadein 0.75s;
+        margin: 0 auto;
     }
 }
 
 .formwrapper {
     padding: 10px;
+    align-content: center;
+    justify-content: center;
+    margin: 0 auto;
 }
 
 .textbox {
@@ -154,6 +160,7 @@ h3 {
 
 .spacing {
     height: 10px;
+    width: 300px;
 }
 
 .letterspacing {

@@ -26,7 +26,7 @@
 <head>
     <title>Star Odyssey</title>
     <link rel='stylesheet' href='css/splash.css'>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
     
