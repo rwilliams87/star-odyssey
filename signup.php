@@ -25,8 +25,17 @@
         if (!$screenflash) {
             $query = $connection -> prepare("INSERT INTO users (username, email, password) VALUES (?, ?, ?)");
             $result = $query -> execute([$username, $email, $finalpassword]);
-            if ($result) {
+
+            $getid = $connection -> prepare("SELECT id FROM users WHERE email = ?");
+            $getid -> execute([$email]);
+            $id = $getid -> fetch();
+
+            $pushresources1 = $connection -> prepare("INSERT INTO resources (id) VALUES (?)");
+            $pushresources2 = $pushresources1 -> execute([$id['id']]);
+
+            if ($result && $pushresources2) {
                 $screenflash = "Your registration was successful.";
+                $flashchange = "<script>document.getElementsByClassName('screenflash')[0].style.borderColor = 'green';</script>";
             } else {
                 $screenflash = "Something went wrong.";
             }
@@ -50,7 +59,9 @@
             <h1 class='letterspacing'>Star Odyssey</h1>
             <h3>Sign Up For A New Account</h3>
                 <?php if ($screenflash) { ?>
-                <div class='screenflash'><?=$screenflash?></h3></div>
+                <div class='screenflash'>
+                <?php if ($flashchange) { echo $flashchange; } ?>
+                <?=$screenflash?></h3></div>
                 <div class='spacing'></div>
                 <?php } ?>
             <form method='post' action='' name='signup'>
