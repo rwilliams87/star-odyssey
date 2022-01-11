@@ -1,6 +1,6 @@
 
-<?php include('../includes/header.php'); ?>
-<script src='../includes/internal.js'></script>
+<?php include('includes/_file-start.php'); ?>
+<script src='javascript/internal.js'></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js"></script>
 
 <script>
@@ -30,7 +30,8 @@
 
 <head>
     <title>Star Odyssey -> Main</title>
-    <link rel='stylesheet' href='../css/internal.css'>
+    <link rel='stylesheet' href='css/_parent.css'>
+    <link rel='stylesheet' href='css/main.css'>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
@@ -38,19 +39,19 @@
 
     <!-- Start Frame -->
     <!-- Start Top Banner -->
-    <?php include('../includes/topbanner.php'); ?>
+    <?php include('includes/banner.php'); ?>
     <!-- End Top Banner -->
     <!-- Start Hamboyga Menu -->
-    <?php include('../includes/hamburger.php'); ?>
+    <?php include('includes/hmenu.php'); ?>
     <!-- End Hamboyga Menu -->
 
     <!-- Start Main Area -->
-    <div class='main' width='100%'>
+    <div class='main' width='100%' id='main'>
 
         <div class="parent">
-            <div class="div1">The Empire Of <?=$info['username']?></div>
+            <div class="div1">The Empire Of <?=$info['username']?>  (<?=$coords['x']?>:<?=$coords['y']?>)</div>
             <div class="div2">Population Statistics</div>
-            <div class="div3"><div class='chartContainer'><canvas id="myChart" height='130' width='130'></canvas></div></div>
+            <div class="div3"><div class='chartContainer'><canvas id="myChart" height='120' width='120'></canvas></div></div>
             <div class="div4">Total Population:</div>
             <div class="div5"><?=$population?></div>
             <div class="div6"><div class='legend l1'></div>Civilians:</div>
@@ -72,122 +73,6 @@
             <div class='div22'><div class='amotd'>h0ly sHIT we're getting nuked wtf man get ur asses online and attack these hoes</div></div>
             
         </div>
-
-
-
-
-
-
-
-
-        <!--
-    <div class='main-upperinfogrid'>
-    <div class='main-upperinfogrid-header'>
-        The Kingdom Of<br>
-        <?=$info['username']?>
-    </div> 
-    <div class='main-upperinfogrid-mid1'>
-        General Information
-    </div>
-    <div class='main-upperinfogrid1'>
-        Total Population:
-    </div>
-    <div class='main-upperinfogrid2'>
-        2500
-    </div>
-    <div class='main-upperinfogrid3'>
-        Civilians:
-    </div>
-    <div class='main-upperinfogrid4'>
-        1000
-    </div>
-    <div class='main-upperinfogrid5'>
-        Soldiers:
-    </div>
-    <div class='main-upperinfogrid6'>
-        500
-    </div>
-    <div class='main-upperinfogrid7'>
-        Miners:
-    </div>
-    <div class='main-upperinfogrid8'>
-        500
-    </div>
-    <div class='main-upperinfogrid9'>
-        Scientists:
-    </div>
-    <div class='main-upperinfogrid10'>
-        500
-    </div>
-    <div class='main-upperinfogrid11'>
-        Total Money
-    </div>
-    <div class='main-upperinfogrid12'>
-        999,999
-    </div>
-    <div class='main-upperinfogrid13'>
-        Income Per Tick:
-    </div>
-    <div class='main-upperinfogrid14'>
-        500
-    </div>
-    <div class='main-upperinfogrid15'>
-        Kriden Per Tick:
-    </div>
-    <div class='main-upperinfogrid16'>
-        0
-    </div>
-    <div class='main-upperinfogrid17'>
-        Ridon Per Tick:
-    </div>
-    <div class='main-upperinfogrid18'>
-        0
-    </div>
-    <div class='main-upperinfogrid19'>
-        Briterium Per Tick:
-    </div>
-    <div class='main-upperinfogrid20'>
-        0
-    </div>
-    </div>
-    
-    <table>
-        <tr>
-            <td colspan='4' class='theader'>The Empire Of<br><?=$info['username']?></td>
-        </tr>
-        <tr>
-            <td colspan='4' class='tmid'>General Information</td>
-        </tr>
-        <tr>
-            <td colspan='2' width='50%' class='trow'>
-            Total Population: <br>
-            Civilians: <br>
-            Soldiers: <br>
-            Miners: <br>
-            Scientists: 
-            </td>
-            <td colspan='2' width='50%' class='trow'>
-            Total Money: <br>
-            Income Per Tick: <br>
-            Kriden Per Tick: <br>
-            Ridon Per Tick: <br>
-            Briterium Per Tick: 
-            </td>
-        </tr>
-        <tr>
-            <td colspan='4' class='tmid'>Utilization</td>
-        </tr>
-        <tr>
-            <td colspan='3' class='trow'>
-            Soldiers Not Assigned To A Ship: <br>
-            Scientists Not Assigned To A Project: <br>
-            Miners To Assigned To A Vein: 
-            </td>
-            <td colspan='1' class='trow'>###<br>###<br>###</td>
-        </tr>
-    </table>
-    -->
-
     </div>
     <!-- End Main Area -->
 
@@ -202,4 +87,4 @@
 
 </html>
 
-<?php include('../includes/footer.php'); ?>
+<?php include('includes/_file-end.php'); ?>

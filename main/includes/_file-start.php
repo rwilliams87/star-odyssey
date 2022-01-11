@@ -6,7 +6,7 @@ session_start();
 // If $_SESSION['id'] is not set...log out.
 // If it is, $id is the player's ID.
 if(!isset($_SESSION['id'])) {
-    header ('Location: logout.php');
+    header ('Location: ../../site/logout.php');
     exit;
 } else {
     $id = $_SESSION['id'];
@@ -20,7 +20,11 @@ $info = $getinfo -> fetch();
 $getresources = $connection -> prepare('SELECT * FROM resources WHERE id = ?');
 $getresources -> execute([$id]);
 $resources = $getresources -> fetch();
-//Calculate Population
+// Calculate Population
 $population = $resources['civilians'] + $resources['soldiers'] + $resources['engineers'] + $resources['scientists'];
+// Get Empire Coordinates
+$getcoords = $connection -> prepare('SELECT * FROM sectors WHERE belongs_to = ? AND home_sector = ?');
+$getcoords -> execute([$id, 1]);
+$coords = $getcoords -> fetch();
 // TODO: GET MESSAGES AND NEWS ALERTS HERE, FOR THE TOP BANNER.
 ?>

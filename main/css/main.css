@@ -1,0 +1,174 @@
+.chartContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.legend {
+    height: 6px;
+    width: 6px;
+    border: 1px solid white;
+    padding: 4px;
+    align-self: center;
+    margin-right: 5px;
+}
+
+.l1 {
+    background: #4A1A70;
+}
+
+.l2 {
+    background: #2306a9;
+}
+
+.l3 {
+    background: #140e2f;
+}
+
+.l4 {
+    background: #d8b6d3;
+}
+
+.parent {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(15, 30px);
+    grid-column-gap: 3px;
+    grid-row-gap: 3px;
+    width: 100vw;
+    line-height: 30px;
+}
+
+.parent div {
+    padding-left: 4px;
+    padding-right: 4px;
+    display: flex;
+}
+
+.div1 {
+    grid-area: 1 / 1 / 2 / 6;
+    background: #C1CDD5;
+    color: #000000;
+    justify-content: center;
+}
+
+.div2 {
+    grid-area: 2 / 1 / 3 / 6;
+    background: #222233;
+    color: #FFFFFF;
+    justify-content: center;
+}
+
+.div3 {
+    grid-area: 3 / 1 / 8 / 3;
+    background: #333355;
+    align-items: center;
+    justify-content: center;
+}
+
+.div4 {
+    grid-area: 3 / 3 / 4 / 5;
+    background: #333355;
+}
+
+.div5 {
+    grid-area: 3 / 5 / 4 / 6;
+    background: #111133;
+}
+
+.div6 {
+    grid-area: 4 / 3 / 5 / 5;
+    background: #333355;
+}
+
+.div7 {
+    grid-area: 4 / 5 / 5 / 6;
+    background: #111133;
+}
+
+.div8 {
+    grid-area: 5 / 3 / 6 / 5;
+    background: #333355;
+}
+
+.div9 {
+    grid-area: 5 / 5 / 6 / 6;
+    background: #111133;
+}
+
+.div10 {
+    grid-area: 6 / 3 / 7 / 5;
+    background: #333355;
+}
+
+.div11 {
+    grid-area: 6 / 5 / 7 / 6;
+    background: #111133;
+}
+
+.div12 {
+    grid-area: 7 / 3 / 8 / 5;
+    background: #333355;
+}
+
+.div13 {
+    grid-area: 7 / 5 / 8 / 6;
+    background: #111133;
+}
+
+.div14 {
+    grid-area: 8 / 1 / 9 / 6;
+    background: #222233;
+    justify-content: center;
+}
+
+.div15 {
+    grid-area: 9 / 1 / 10 / 5;
+    background: #333355;
+}
+
+.div16 {
+    grid-area: 9 / 5 / 10 / 6;
+    background: #111133;
+}
+
+.div17 {
+    grid-area: 10 / 1 / 11 / 5;
+    background: #333355;
+}
+
+.div18 {
+    grid-area: 10 / 5 / 11 / 6;
+    background: #111133;
+}
+
+.div19 {
+    grid-area: 11 / 1 / 12 / 5;
+    background: #333355;
+}
+
+.div20 {
+    grid-area: 11 / 5 / 12 / 6;
+    background: #111133;
+}
+
+.div21 {
+    grid-area: 12 / 1 / 13 / 6;
+    background: #222233;
+    justify-content: center;
+}
+
+.div22 {
+    grid-area: 13 / 1 / 16 / 6;
+    background: #333355;
+    justify-content: center;
+    align-items: center;
+}
+
+.amotd {
+    height: 80px;
+    width: 90%;
+    color: #FFFFFF;
+    background: #000000;
+    border: 3px solid white;
+}
