@@ -18,6 +18,7 @@ if (isset($_POST['register'])) {
         $finalpassword = password_hash($password2, PASSWORD_BCRYPT);
     } else {
         $screenflash = "Your passwords do not match.";
+        exit();
     }
 
     // Check for duplicate empire names.
@@ -25,6 +26,7 @@ if (isset($_POST['register'])) {
     $checkusername->execute([$username]);
     if ($checkusername->rowCount() > 0) {
         $screenflash = "This empire name already exists.";
+        exit();
     }
 
     // Check for duplicate email addresses.
@@ -32,6 +34,12 @@ if (isset($_POST['register'])) {
     $checkemail->execute([$email]);
     if ($checkemail->rowCount() > 0) {
         $screenflash = "This email address is already registered.";
+        exit();
+    }
+
+    // Check to see if password is too short.
+    if (strlen($password) < 8) {
+        $screenflash = "Passwords must be 8 characters or longer.";
     }
 
     // If everything is good to go...
@@ -47,6 +55,7 @@ if (isset($_POST['register'])) {
     $doublecheck = $doublechecksectors -> fetch();
     if ($doublecheck['belongs_to'] != '0') {
         $screenflash = "Something went wrong with the sectors.";
+        exit();
     }
 
 

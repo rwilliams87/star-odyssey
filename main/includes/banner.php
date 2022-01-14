@@ -1,5 +1,5 @@
 <div class='topbanner'>
-        <div onclick='hamburgerMenu()'><img src="https://img.icons8.com/ios/50/000000/menu-squared-2--v1.png" height='40px'></div>
+        <div onclick='hamburgerMenu()'><img src="https://img.icons8.com/ios/50/000000/menu-squared-2--v1.png" height='40px' class='hbutton'></div>
         <div class='topbanner-right'>$<?=$resources['money']?><br> No New Messages</div>
     </div>
     <div class='midbanner'>

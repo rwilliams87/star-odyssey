@@ -36,8 +36,11 @@
 </head>
 
 <body>
+    <div class='outerframe1'>
+    <div class='outerframe2'>
+    <?php include('includes/smenu.php'); ?>
+    <div class='outerframe3'>
 
-    <!-- Start Frame -->
     <!-- Start Top Banner -->
     <?php include('includes/banner.php'); ?>
     <!-- End Top Banner -->
@@ -46,7 +49,8 @@
     <!-- End Hamboyga Menu -->
 
     <!-- Start Main Area -->
-    <div class='main' width='100%' id='main'>
+    
+    <div class='main' id='main'>
 
         <div class="parent">
             <div class="div1">The Empire Of <?=$info['username']?>  (<?=$coords['x']?>:<?=$coords['y']?>)</div>
@@ -71,6 +75,8 @@
             <div class='div20'>500</div>
             <div class='div21'>Message From Your Alliance Leader</div>
             <div class='div22'><div class='amotd'>h0ly sHIT we're getting nuked wtf man get ur asses online and attack these hoes</div></div>
+
+        
             
         </div>
     </div>
@@ -81,8 +87,7 @@
     <!-- End Bottom Banner -->
 
 
-
-
+</div></div></div>
 </body>
 
 </html>
