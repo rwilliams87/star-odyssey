@@ -34,12 +34,15 @@ if (isset($_POST['register'])) {
     $checkemail->execute([$email]);
     if ($checkemail->rowCount() > 0) {
         $screenflash = "This email address is already registered.";
-        exit();
     }
 
     // Check to see if password is too short.
     if (strlen($password) < 8) {
         $screenflash = "Passwords must be 8 characters or longer.";
+    }
+
+    if (strlen($username) > 25) {
+        $screenflash ='Your empire name must be less than 25 characters.';
     }
 
     // If everything is good to go...
@@ -74,20 +77,7 @@ if (isset($_POST['register'])) {
         $insert_sectors = $connection -> prepare ("UPDATE sectors SET belongs_to = ?, home_sector = ? WHERE sector_id = ?");
         $sectors = $insert_sectors -> execute([$id['id'], 1, $sectorselect]);
 
-        $insert_drafting_soldiers = $connection -> prepare ("INSERT INTO drafting_soldiers (id) VALUES (?)");
-        $drafting_soldiers = $insert_drafting_soldiers -> execute([$id['id']]);
-
-        $insert_drafting_scientists = $connection -> prepare ("INSERT INTO drafting_scientists (id) VALUES (?)");
-        $drafting_scientists = $insert_drafting_scientists -> execute([$id['id']]);
-
-        $insert_drafting_engineers = $connection -> prepare ("INSERT INTO drafting_engineers (id) VALUES (?)");
-        $drafting_engineers = $insert_drafting_engineers -> execute([$id['id']]);
-
-        $insert_mining = $connection -> prepare ("INSERT INTO mining (id) VALUES (?)");
-        $mining = $insert_mining -> execute([$id['id']]);
-
-
-        if ($users && $resources && $sectors && $drafting_soldiers && $drafting_scientists && $drafting_engineers && $mining) {
+        if ($users && $resources && $sectors && $mining) {
             $screenflash = "Your registration was successful.";
             $flashchange = "<script>document.getElementsByClassName('screenflash')[0].style.borderColor = 'green';</script>";
         } else {
@@ -132,7 +122,7 @@ if (isset($_POST['register'])) {
                 <input type='email' placeholder='Email Address' class='textbox' name='email'>
                 <div class='spacing'></div>
                 Empire Name:<br>
-                <input type='text' placeholder='Empire Name' class='textbox' name='username'>
+                <input type='text' placeholder='Empire Name' maxlength='25'class='textbox' name='username'>
                 <div class='spacing'></div>
                 Password:<br>
                 <input type='password' placeholder='Password' class='textbox' name='password'>

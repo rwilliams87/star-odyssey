@@ -60,13 +60,13 @@
                         <div class="div13"><?=$resources['engineers']?></div>
                         <div class='div14'>Military Utilization</div>
                         <div class='div15'>Soldiers Not Assigned To A Ship:</div>
-                        <div class='div16'>500</div>
+                        <div class='div16'><?=$resources['soldiers']?></div>
                         <div class='div17'>Scientists Not Assigned To A Project:</div>
-                        <div class='div18'>500</div>
+                        <div class='div18'><?=$resources['scientists']?></div>
                         <div class='div19'>Engineers Not Assigned To A Mine:</div>
-                        <div class='div20'>500</div>
+                        <div class='div20'><?=$resources['engineers']?></div>
                         <div class='div21'>Message From Your Alliance Leader</div>
-                        <div class='div22'><div class='amotd'>h0ly sHIT we're getting nuked wtf man get ur asses online and attack these hoes</div></div>
+                        <div class='div22'><div class='amotd'>Alliance message of the day will go here!</div></div>
                     </div>
                 </div>
                 <div>test</div>

@@ -3,7 +3,7 @@
     <div class="smenu2" onclick="location.href='main.php';">Main</div>
     <div class="smenu3">Status</div>
     <div class="smenu4">News</div>
-    <div class="smenu5">Messages</div>
+    <div class="smenu5" onclick="location.href='messages.php';">Messages</div>
     <div class="smenu6">Alliance Center</div>
     <div class="smenu7">Development</div>
     <div class="smenu8" onclick="location.href='drafting.php';">Drafting</div>

@@ -1,0 +1,82 @@
+.smallinputbox {
+    height: 24px;
+    width: 55px;
+    background: #000000;
+    color: #FFFFFF;
+    border: 2px solid white;
+    box-sizing: border-box;
+}
+
+.smallDropDownBox {
+    height: 24px;
+    width: 90%;
+    background: #000000;
+    color: #FFFFFF;
+    border: 2px solid white;
+    box-sizing: border-box;
+}
+
+.largeInputBox {
+    height: 125px;
+    width: 90%;
+    background: #000000;
+    color: #FFFFFF;
+    border: 2px solid white;
+    box-sizing: border-box;
+}
+
+.smallinputbutton {
+    height: 24px;
+    width: 100px;
+    background: #000000;
+    color: #FFFFFF;
+    border: 2px solid white;
+}
+
+.tip {
+    width: 80%;
+    box-sizing: border-box;
+    border: 3px solid #FFFFFF;
+    padding: 10px;
+    align-self: center;
+}
+
+.topTable {  
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    gap: 3px 3px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "topHeader"
+      "topText";
+    width: 100%;
+    border: 3px solid black;
+    box-sizing: border-box;
+  }
+  .topHeader { grid-area: topHeader; min-height: 30px; background-color: #C1CDD5; color: #000000; display: flex; justify-content: center; align-items: center; }
+  .topText { grid-area: topText; min-height: 30px; background-color: #111133; display: flex; justify-content: center; align-items: center; }
+  
+
+.compose {  display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto auto auto;
+    gap: 3px 3px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "composeHeader composeHeader composeHeader"
+      "composeTo composeDropDown composeDropDown"
+      "composeField composeField composeField"
+      "composeCharLeft composeCharLeft composeSubmit";
+    width: 100%;
+    border: 3px solid black;
+    box-sizing: border-box;
+ }
+  .compose div { display: flex; align-items: center; min-height: 30px; }
+  .composeHeader { grid-area: composeHeader; background: #C1CDD5; color: #000000;  justify-content: center; }
+  .composeTo { grid-area: composeTo; background: #222233; padding-left: 5px; }
+  .composeDropDown { grid-area: composeDropDown; background: #222233; justify-content: center;}
+  .composeField { grid-area: composeField; background: #333355; justify-content: center; padding-top: 10px; padding-bottom: 10px;}
+  .composeCharLeft { grid-area: composeCharLeft; background: #222233; padding-left: 5px; }
+  .composeSubmit { grid-area: composeSubmit; background: #222233; justify-content: center; }
+  
