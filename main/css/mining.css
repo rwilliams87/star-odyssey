@@ -1,0 +1,94 @@
+.sinput {
+  height: 24px;
+  width: 55px;
+  background: #000000;
+  color: #FFFFFF;
+  border: 2px solid white;
+  box-sizing: border-box;
+}
+
+.sbutton {
+  height: 24px;
+  width: 200px;
+  background: #000000;
+  color: #FFFFFF;
+  border: 2px solid white;
+}
+
+.tip {
+  width: 80%;
+  box-sizing: border-box;
+  border: 3px solid #FFFFFF;
+  padding: 10px;
+  align-self: center;
+}
+
+.mines {  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto;
+  gap: 3px 3px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "m-header m-header m-header m-header"
+    "m-text m-text m-text m-text"
+    "m-ridon m-ridon m-ridon m-ridon"
+    "m-r-engineers-text m-r-engineers-text m-r-engineers-text m-r-engineers-number"
+    "m-r-per-tick m-r-per-tick m-r-per-tick m-r-per-tick-number"
+    "m-r-remove m-r-remove-number m-r-add m-r-add-number"
+    "m-briterium m-briterium m-briterium m-briterium"
+    "m-b-engineers-text m-b-engineers-text m-b-engineers-text m-b-engineers-number"
+    "m-b-per-tick m-b-per-tick m-b-per-tick m-b-per-tick-number"
+    "m-b-remove m-b-remove-number m-b-add m-b-add-number"
+    "m-kriden m-kriden m-kriden m-kriden"
+    "m-k-engineers-text m-k-engineers-text m-k-engineers-text m-k-engineers-number"
+    "m-k-per-tick m-k-per-tick m-k-per-tick m-k-per-tick-number"
+    "m-k-remove m-k-remove-number m-k-add m-k-add-number"
+    "m-submit m-submit m-submit m-submit";
+  width: 100%;
+  border: 3px solid black;
+  box-sizing: border-box;
+}
+.mines div { padding-left: 5px; padding-right: 5px; min-height: 30px; display: flex; align-items: center;}
+.m-ridon, .m-briterium, .m-kriden { background: #222233; justify-content: center; }
+
+.m-r-engineers-text, .m-r-engineers-number, .m-r-per-tick, .m-r-per-tick-number, 
+.m-r-remove, .m-r-remove-number, .m-r-add, .m-r-add-number { background: #333355; }
+
+.m-b-engineers-text, .m-b-engineers-number, .m-b-per-tick, .m-b-per-tick-number, 
+.m-b-remove, .m-b-remove-number, .m-b-add, .m-b-add-number { background: #333355; }
+
+.m-k-engineers-text, .m-k-engineers-number, .m-k-per-tick, .m-k-per-tick-number, 
+.m-k-remove, .m-k-remove-number, .m-k-add, .m-k-add-number { background: #333355; }
+
+.m-r-remove-number, .m-r-add-number, .m-b-remove-number, .m-b-add-number, .m-k-remove-number, .m-k-add-number { justify-content: center; }
+
+.m-header { grid-area: m-header; background: #C1CDD5; color: #000000; justify-content: center;}
+.m-text { grid-area: m-text; background: #111133; justify-content: center; }
+.m-ridon { grid-area: m-ridon; }
+.m-r-engineers-text { grid-area: m-r-engineers-text; }
+.m-r-engineers-number { grid-area: m-r-engineers-number; }
+.m-r-per-tick { grid-area: m-r-per-tick; }
+.m-r-per-tick-number { grid-area: m-r-per-tick-number; }
+.m-r-remove { grid-area: m-r-remove; }
+.m-r-remove-number { grid-area: m-r-remove-number; }
+.m-r-add { grid-area: m-r-add; }
+.m-r-add-number { grid-area: m-r-add-number; }
+.m-briterium { grid-area: m-briterium; }
+.m-b-engineers-text { grid-area: m-b-engineers-text; }
+.m-b-engineers-number { grid-area: m-b-engineers-number; }
+.m-b-per-tick { grid-area: m-b-per-tick; }
+.m-b-per-tick-number { grid-area: m-b-per-tick-number; }
+.m-b-remove { grid-area: m-b-remove; }
+.m-b-remove-number { grid-area: m-b-remove-number; }
+.m-b-add { grid-area: m-b-add; }
+.m-b-add-number { grid-area: m-b-add-number; }
+.m-kriden { grid-area: m-kriden; }
+.m-k-engineers-text { grid-area: m-k-engineers-text; }
+.m-k-engineers-number { grid-area: m-k-engineers-number; }
+.m-k-per-tick { grid-area: m-k-per-tick; }
+.m-k-per-tick-number { grid-area: m-k-per-tick-number; }
+.m-k-remove { grid-area: m-k-remove; }
+.m-k-add { grid-area: m-k-add; }
+.m-k-add-number { grid-area: m-k-add-number; }
+.m-k-remove-number { grid-area: m-k-remove-number; }
+.m-submit { grid-area: m-submit; background: #111133; justify-content: center; }

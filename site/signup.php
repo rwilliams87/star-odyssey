@@ -55,7 +55,7 @@ if (isset($_POST['register'])) {
     $doublecheck = $doublechecksectors -> fetch();
     if ($doublecheck['belongs_to'] != '0') {
         $screenflash = "Something went wrong with the sectors.";
-        exit();
+        
     }
 
 
@@ -70,9 +70,24 @@ if (isset($_POST['register'])) {
         // We're going to use that empire ID for the rest of the data we need to insert.
         $insert_resources = $connection -> prepare ("INSERT INTO resources (id) VALUES (?)");
         $resources = $insert_resources -> execute([$id['id']]);
+
         $insert_sectors = $connection -> prepare ("UPDATE sectors SET belongs_to = ?, home_sector = ? WHERE sector_id = ?");
         $sectors = $insert_sectors -> execute([$id['id'], 1, $sectorselect]);
-        if ($users && $resources && $sectors) {
+
+        $insert_drafting_soldiers = $connection -> prepare ("INSERT INTO drafting_soldiers (id) VALUES (?)");
+        $drafting_soldiers = $insert_drafting_soldiers -> execute([$id['id']]);
+
+        $insert_drafting_scientists = $connection -> prepare ("INSERT INTO drafting_scientists (id) VALUES (?)");
+        $drafting_scientists = $insert_drafting_scientists -> execute([$id['id']]);
+
+        $insert_drafting_engineers = $connection -> prepare ("INSERT INTO drafting_engineers (id) VALUES (?)");
+        $drafting_engineers = $insert_drafting_engineers -> execute([$id['id']]);
+
+        $insert_mining = $connection -> prepare ("INSERT INTO mining (id) VALUES (?)");
+        $mining = $insert_mining -> execute([$id['id']]);
+
+
+        if ($users && $resources && $sectors && $drafting_soldiers && $drafting_scientists && $drafting_engineers && $mining) {
             $screenflash = "Your registration was successful.";
             $flashchange = "<script>document.getElementsByClassName('screenflash')[0].style.borderColor = 'green';</script>";
         } else {
@@ -98,6 +113,7 @@ if (isset($_POST['register'])) {
     <div id='stars2'></div>
     <div id='stars3'></div>
     <!-- End Stars -->
+
         <div class='container'>
         <div class='formwrapper'>
             <h1 class='letterspacing'>Star Odyssey</h1>
@@ -149,6 +165,7 @@ if (isset($_POST['register'])) {
             <div class='spacing'></div>
             <div class='centering'><a href='forgotpassword.php'>Forgot Your Password?</a></div>
         </div>
+        
     </div>
 </body>
 </html>

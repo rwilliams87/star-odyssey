@@ -4,6 +4,11 @@ body {
     overflow: hidden;
     color: #FFFFFF;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    box-sizing: border-box;
+    
+}
+#stars, #stars2, #stars3 {
+    z-index: -10;
 }
 
 #stars {
@@ -71,6 +76,13 @@ h3 {
     text-align: center;
 }
 
+.scrollbox {
+    height: 100%;
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
 .screenflash {
     position: relative;
     display: flex;
@@ -85,7 +97,7 @@ h3 {
 }
 
 .container {
-    position: fixed;
+    position: absolute;
     display: flex;
     min-height: 100vh;
     min-width: 100vw;
@@ -94,17 +106,19 @@ h3 {
     animation: fadein 1.5s;
     top: 0px;
     left: 0px;
+    overflow-y: auto;
 }
 
 @media only screen and (max-width: 600px) {
     .container {
-        position: fixed;
+        position: absolute;
         display: flex;
         min-height: 100vh;
         min-width: 100vw;
         align-items: flex-start;
         justify-content: center;
         animation: fadein 1.5s;
+        overflow-y: auto;
     }
 }
 
@@ -116,6 +130,11 @@ h3 {
     align-items: center;
     justify-content: center;
     animation: fadein 0.75s;
+}
+
+.outer {
+    position: relative;
+    height: auto;
 }
 
 @media only screen and (max-width: 600px) {
@@ -131,7 +150,9 @@ h3 {
 }
 
 .formwrapper {
+    position: relative;
     padding: 10px;
+    overflow-y: auto;
 }
 
 .textbox {
@@ -217,6 +238,8 @@ A:hover {
     text-decoration: none;
     color: #399993;
 }
+
+form { overflow-y: auto; }
 
 @keyframes animStar {
     from {

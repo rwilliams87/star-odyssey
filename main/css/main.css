@@ -35,7 +35,7 @@
     grid-template-rows: repeat(15, 30px);
     grid-column-gap: 3px;
     grid-row-gap: 3px;
-    width: 100vw;
+    width: 100%;
     line-height: 30px;
     border: 3px solid black;
     box-sizing: border-box;

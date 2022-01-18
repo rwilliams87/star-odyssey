@@ -4,6 +4,7 @@
     background: #000000;
     color: #FFFFFF;
     border: 2px solid white;
+    box-sizing: border-box;
 }
 
 .smallinputbutton {
@@ -14,89 +15,144 @@
     border: 2px solid white;
 }
 
-.status {
-    display: grid;
-    width: 100vw;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 30px 30px 30px 30px 30px 30px;
-    grid-column-gap: 3px;
-    grid-row-gap: 3px;
+.tip {
+    width: 80%;
     box-sizing: border-box;
-    }
-
-.status div {
-        padding-left: 4px;
-        padding-right: 4px;
-        display: flex;
-        align-items: center;
-    }
-.status3, .status5, .status7, .status9 { background: #333355; }
-.status4, .status6, .status8, .status10, .status13, .status14, .status15, .status16 { background: #111133; }
-.status2, .status11, .status12 { background: #222233; }
-.status1, .status2, .status11, .status12 { display: flex; align-items: center; justify-content: center; }
-    
-    .status1 { grid-area: 1 / 1 / 2 / 5; background: #C1CDD5; color: #000000; }
-    .status2 { grid-area: 2 / 1 / 3 / 3; }
-    .status3 { grid-area: 3 / 1 / 4 / 3; }
-    .status4 { grid-area: 3 / 4 / 4 / 5; }
-    .status5 { grid-area: 4 / 1 / 5 / 3; }
-    .status6 { grid-area: 4 / 4 / 5 / 5; }
-    .status7 { grid-area: 5 / 1 / 6 / 3; }
-    .status8 { grid-area: 5 / 4 / 6 / 5; }
-    .status9 { grid-area: 6 / 1 / 7 / 3; }
-    .status10 { grid-area: 6 / 4 / 7 / 5; }
-    .status11 { grid-area: 2 / 3 / 3 / 4; }
-    .status12 { grid-area: 2 / 4 / 3 / 5; }
-    .status13 { grid-area: 3 / 3 / 4 / 4; }
-    .status14 { grid-area: 4 / 3 / 5 / 4; }
-    .status15 { grid-area: 5 / 3 / 6 / 4; }
-    .status16 { grid-area: 6 / 3 / 7 / 4; }
-    
-    
+    border: 3px solid #FFFFFF;
+    padding: 10px;
+    align-self: center;
+}
 
 .drafting {
-    display: grid;
-    width: 100vw;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(16, 30px);
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    grid-template-rows: auto auto auto auto auto auto auto; 
     grid-column-gap: 3px;
     grid-row-gap: 3px;
-    }
-    
-.drafting1, .drafting2, .drafting3, .drafting4 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.drafting2, .drafting3, .drafting4 {
-    background: #222233;
-}
-
-.drafting5, .drafting6, .drafting7, 
-.drafting8, .drafting9, .drafting10,
-.drafting11, .drafting12, .drafting13, .drafting14 {
-    background: #333355;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.drafting1 { grid-area: 1 / 1 / 2 / 7; background: #C1CDD5; color: #000000; }
-.drafting2 { grid-area: 2 / 1 / 3 / 3; }
-.drafting3 { grid-area: 2 / 3 / 3 / 5; }
-.drafting4 { grid-area: 2 / 5 / 3 / 7; }
-.drafting5 { grid-area: 3 / 1 / 4 / 3; }
-.drafting6 { grid-area: 3 / 3 / 4 / 5; }
-.drafting7 { grid-area: 3 / 5 / 4 / 7; }
-.drafting8 { grid-area: 4 / 1 / 5 / 3; }
-.drafting9 { grid-area: 4 / 3 / 5 / 5; }
-.drafting10 { grid-area: 4 / 5 / 5 / 7; }
-.drafting11 { grid-area: 5 / 1 / 6 / 3; }
-.drafting12 { grid-area: 5 / 3 / 6 / 5; }
-.drafting13 { grid-area: 5 / 5 / 6 / 7; }
-.drafting14 { grid-area: 6 / 1 / 7 / 7; background: #111133; }
-
-form {
+    grid-template-areas: 
+      "d-header d-header"
+      "d-text d-text"
+      "d-name d-draft"
+      "d-soldiers d-soldiers-input"
+      "d-scientists d-scientists-input"
+      "d-engineers d-engineers-input"
+      "d-button d-button";
+    width: 100%;
+    border: 3px solid black;
     box-sizing: border-box;
-}
+  }
+  .d-soldiers, .d-soldiers-input, .d-scientists, .d-scientists-input, 
+  .d-engineers, .d-engineers-input, .d-button { background: #333355; }
+  .drafting div { min-height: 30px; box-sizing: border-box; padding: 5px; display: flex; justify-content: center; align-items: center; }
+  .d-header { grid-area: d-header; background: #C1CDD5; color: #000000; }
+  .d-text { grid-area: d-text; background: #111133; }
+  .d-name { grid-area: d-name; background: #222233; }
+  .d-draft { grid-area: d-draft; background: #222233; }
+  .d-soldiers { grid-area: d-soldiers; }
+  .d-soldiers-input { grid-area: d-soldiers-input; }
+  .d-scientists { grid-area: d-scientists; }
+  .d-scientists-input { grid-area: d-scientists-input; }
+  .d-engineers { grid-area: d-engineers; }
+  .d-engineers-input { grid-area: d-engineers-input; }
+  .d-button { grid-area: d-button; }
+
+
+
+.draftingstatus {  
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto;
+    gap: 3px 3px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "ds-header ds-header ds-header ds-header ds-header ds-header ds-header"
+      "ds-tick ds-soldier ds-soldier ds-scientist ds-scientist ds-engineer ds-engineer"
+      "t12 ds-soldier-12 ds-soldier-12 ds-scientist-12 ds-scientist-12 ds-engineer-12 ds-engineer-12"
+      "t11 ds-soldier-11 ds-soldier-11 ds-scientist-11 ds-scientist-11 ds-engineer-11 ds-engineer-11"
+      "t10 ds-soldier-10 ds-soldier-10 ds-scientist-10 ds-scientist-10 ds-engineer-10 ds-engineer-10"
+      "t9 ds-soldier-9 ds-soldier-9 ds-scientist-9 ds-scientist-9 ds-engineer-9 ds-engineer-9"
+      "t8 ds-soldier-8 ds-soldier-8 ds-scientist-8 ds-scientist-8 ds-engineer-8 ds-engineer-8"
+      "t7 ds-soldier-7 ds-soldier-7 ds-scientist-7 ds-scientist-7 ds-engineer-7 ds-engineer-7"
+      "t6 ds-soldier-6 ds-soldier-6 ds-scientist-6 ds-scientist-6 ds-engineer-6 ds-engineer-6"
+      "t5 ds-soldier-5 ds-soldier-5 ds-scientist-5 ds-scientist-5 ds-engineer-5 ds-engineer-5"
+      "t4 ds-soldier-4 ds-soldier-4 ds-scientist-4 ds-scientist-4 ds-engineer-4 ds-engineer-4"
+      "t3 ds-soldier-3 ds-soldier-3 ds-scientist-3 ds-scientist-3 ds-engineer-3 ds-engineer-3"
+      "t2 ds-soldier-2 ds-soldier-2 ds-scientist-2 ds-scientist-2 ds-engineer-2 ds-engineer-2"
+      "t1 ds-soldier-1 ds-soldier-1 ds-scientist-1 ds-scientist-1 ds-engineer-1 ds-engineer-1"
+      "a ds-soldier-a ds-soldier-a ds-scientist-a ds-scientist-a ds-engineer-a ds-engineer-a";
+      width: 100%;
+      border: 3px solid black;
+      box-sizing: border-box;
+  }
+  .draftingstatus div { min-height: 30px; display: flex; align-items: center; justify-content: center; }
+
+  .ds-tick, .ds-soldier, .ds-engineer, .ds-scientist { background: #222233; }
+  
+  .t12, .t11, .t10, .t9, .t8, .t7, .t6, .t5, .t4, .t3, .t2, .t1, .a { background: #111133; }
+  
+  .ds-soldier-12, .ds-soldier-10, .ds-soldier-11, .ds-soldier-9, .ds-soldier-8, .ds-soldier-7, 
+  .ds-soldier-6, .ds-soldier-5, .ds-soldier-4, .ds-soldier-3, .ds-soldier-2, .ds-soldier-1, .ds-soldier-a { background: #333355; }
+  
+  .ds-scientist-12, .ds-scientist-11, .ds-scientist-10, .ds-scientist-9, .ds-scientist-8, .ds-scientist-7, .ds-scientist-6, 
+  .ds-scientist-5, .ds-scientist-4, .ds-scientist-3, .ds-scientist-2, .ds-scientist-1, .ds-scientist-a { background: #333355; }
+
+  .ds-engineer-12, .ds-engineer-11, .ds-engineer-10, .ds-engineer-9, .ds-engineer-8, .ds-engineer-7, .ds-engineer-6, 
+  .ds-engineer-5, .ds-engineer-4, .ds-engineer-3, .ds-engineer-2, .ds-engineer-1, .ds-engineer-a { background: #333355; }
+
+  .ds-header { grid-area: ds-header; background: #C1CDD5; color: #000000; }
+  .ds-tick { grid-area: ds-tick; }
+  .ds-soldier { grid-area: ds-soldier; }
+  .ds-scientist { grid-area: ds-scientist; }
+  .ds-engineer { grid-area: ds-engineer; }
+  .t12 { grid-area: t12; }
+  .ds-soldier-12 { grid-area: ds-soldier-12; }
+  .ds-scientist-12 { grid-area: ds-scientist-12; }
+  .ds-engineer-12 { grid-area: ds-engineer-12; }
+  .t11 { grid-area: t11; }
+  .ds-soldier-11 { grid-area: ds-soldier-11; }
+  .ds-scientist-11 { grid-area: ds-scientist-11; }
+  .ds-engineer-11 { grid-area: ds-engineer-11; }
+  .t10 { grid-area: t10; }
+  .ds-soldier-10 { grid-area: ds-soldier-10; }
+  .ds-scientist-10 { grid-area: ds-scientist-10; }
+  .ds-engineer-10 { grid-area: ds-engineer-10; }
+  .t9 { grid-area: t9; }
+  .ds-soldier-9 { grid-area: ds-soldier-9; }
+  .ds-scientist-9 { grid-area: ds-scientist-9; }
+  .ds-engineer-9 { grid-area: ds-engineer-9; }
+  .t8 { grid-area: t8; }
+  .ds-soldier-8 { grid-area: ds-soldier-8; }
+  .ds-scientist-8 { grid-area: ds-scientist-8; }
+  .ds-engineer-8 { grid-area: ds-engineer-8; }
+  .t7 { grid-area: t7; }
+  .ds-soldier-7 { grid-area: ds-soldier-7; }
+  .ds-scientist-7 { grid-area: ds-scientist-7; }
+  .ds-engineer-7 { grid-area: ds-engineer-7; }
+  .t6 { grid-area: t6; }
+  .ds-soldier-6 { grid-area: ds-soldier-6; }
+  .ds-scientist-6 { grid-area: ds-scientist-6; }
+  .ds-engineer-6 { grid-area: ds-engineer-6; }
+  .t5 { grid-area: t5; }
+  .ds-soldier-5 { grid-area: ds-soldier-5; }
+  .ds-scientist-5 { grid-area: ds-scientist-5; }
+  .ds-engineer-5 { grid-area: ds-engineer-5; }
+  .t4 { grid-area: t4; }
+  .ds-soldier-4 { grid-area: ds-soldier-4; }
+  .ds-scientist-4 { grid-area: ds-scientist-4; }
+  .ds-engineer-4 { grid-area: ds-engineer-4; }
+  .t3 { grid-area: t3; }
+  .ds-soldier-3 { grid-area: ds-soldier-3; }
+  .ds-scientist-3 { grid-area: ds-scientist-3; }
+  .ds-engineer-3 { grid-area: ds-engineer-3; }  
+  .t2 { grid-area: t2; }
+  .ds-soldier-2 { grid-area: ds-soldier-2; }
+  .ds-scientist-2 { grid-area: ds-scientist-2; }
+  .ds-engineer-2 { grid-area: ds-engineer-2; }
+  .t1 { grid-area: t1; }
+  .ds-soldier-1 { grid-area: ds-soldier-1; }
+  .ds-scientist-1 { grid-area: ds-scientist-1; }
+  .ds-engineer-1 { grid-area: ds-engineer-1; }
+  .a { grid-area: a; }
+  .ds-soldier-a { grid-area: ds-soldier-a; }
+  .ds-scientist-a { grid-area: ds-scientist-a; }
+  .ds-engineer-a { grid-area: ds-engineer-a; }

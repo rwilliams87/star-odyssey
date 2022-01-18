@@ -12,8 +12,15 @@ body {
     box-sizing: border-box;
 }
 
+.outerframe1, .outerframe2, .outerframe3 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
 A:link, A:visited { text-decoration: none; color: #FFFFFF; }
 A:hover { text-decoration: none; color: #399993; }
+form { width: 100% }
 
 .topbanner {
     display: flex;
@@ -43,7 +50,6 @@ A:hover { text-decoration: none; color: #399993; }
 .midbanner {
     display: flex;
     align-items: center;
-    align-self: center;
     justify-content: space-between;
     position: fixed;
     width: 100%;
@@ -67,14 +73,20 @@ A:hover { text-decoration: none; color: #399993; }
 
 .main {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
     position: relative;
     box-sizing: border-box;
-    top: 80px;
-    left: 0px;
-    z-index: -1;
-    flex-wrap: wrap;
+    z-index: 1;
 }
 
+.bannerspacer {
+    width: 100vw;
+    height: 80px;
+    z-index: -9;
+    width:auto;
+}
 .spacer {
     height: 10px;
 }
@@ -86,9 +98,17 @@ A:hover { text-decoration: none; color: #399993; }
     padding: 4px;
 }
 
+.screenflash {
+    border: 3px solid #111133;
+    width: 80%;
+    box-sizing: border-box;
+    padding: 10px;
+    text-align: center;
+}
+
 .hmenu {
     display: none;
-    width: 100vw;
+    width: 90vw;
     padding: 3px;
     padding-right: 3px;
     position: relative;
@@ -103,8 +123,9 @@ A:hover { text-decoration: none; color: #399993; }
     font-size: 1.3em;
     overflow-y: scroll;
     box-sizing: border-box;
+    animation-duration: 200ms;
     }
-
+    .hmenu div { overflow: hidden; }
     .hmenu1, .hmenu7, .hmenu13 {
         display: flex;
         align-items: center;
@@ -121,6 +142,7 @@ A:hover { text-decoration: none; color: #399993; }
         display: flex;
         align-items: center;
         justify-content: center;
+        white-space: nowrap;
     }
     
     .hmenu1 { grid-area: 1 / 1 / 6 / 2; }
@@ -143,75 +165,82 @@ A:hover { text-decoration: none; color: #399993; }
     .hmenu18 { grid-area: 15 / 2 / 16 / 7; }
     .hmenu19 { grid-area: 16 / 1 / 17 / 7; background: #222233; }
 
+.smenu {
+    display: none;
+    width: 100vw;
+    padding: 3px;
+    padding-right: 3px;
+    position: relative;
+    left: 0;
+    top: 146;
+    text-align: center;
+    background: #000000;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(16, 30px);
+    grid-column-gap: 3px;
+    grid-row-gap: 3px;
+    font-size: 1.3em;
+    overflow-y: scroll;
+    box-sizing: border-box;
+    width: 250px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    cursor: default;
+    }
 
-    .smenu {
-        display: none;
-        width: 100vw;
-        padding: 3px;
-        padding-right: 3px;
-        position: relative;
-        left: 0;
-        top: 146;
-        text-align: center;
-        background: #000000;
-        grid-template-columns: repeat(6, 1fr);
-        grid-template-rows: repeat(16, 30px);
-        grid-column-gap: 3px;
-        grid-row-gap: 3px;
-        font-size: 1.3em;
-        overflow-y: scroll;
-        box-sizing: border-box;
-        width: 250px;
-        overflow-x: hidden;
-        overflow-y: hidden;
-        }
+    .smenu1, .smenu7, .smenu13 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #222233;
+        writing-mode: tb;
+        transform: scale(-1);
+    }
+
+    .smenu2, .smenu3, .smenu4, .smenu5, .smenu6,
+    .smenu8, .smenu9, .smenu10, .smenu11, .smenu12,
+    .smenu14, .smenu15, .smenu16, .smenu17, .smenu18, .smenu19 {
+        background: #333355;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .smenu2:hover, .smenu8:hover, .smenu10:hover { background: #111133; }
     
-        .smenu1, .smenu7, .smenu13 {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: #222233;
-            writing-mode: tb;
-            transform: scale(-1);
-        }
-    
-        .smenu2, .smenu3, .smenu4, .smenu5, .smenu6,
-        .smenu8, .smenu9, .smenu10, .smenu11, .smenu12,
-        .smenu14, .smenu15, .smenu16, .smenu17, .smenu18, .smenu19 {
-            background: #333355;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .smenu1 { grid-area: 1 / 1 / 6 / 2; }
-        .smenu2 { grid-area: 1 / 2 / 2 / 7; }
-        .smenu3 { grid-area: 2 / 2 / 3 / 7; }
-        .smenu4 { grid-area: 3 / 2 / 4 / 7; }
-        .smenu5 { grid-area: 4 / 2 / 5 / 7; }
-        .smenu6 { grid-area: 5 / 2 / 6 / 7; }
-        .smenu7 { grid-area: 6 / 1 / 11 / 2;}
-        .smenu8 { grid-area: 6 / 2 / 7 / 7; }
-        .smenu9 { grid-area: 7 / 2 / 8 / 7; }
-        .smenu10 { grid-area: 8 / 2 / 9 / 7; }
-        .smenu11 { grid-area: 9 / 2 / 10 / 7; }
-        .smenu12 { grid-area: 10 / 2 / 11 / 7; }
-        .smenu13 { grid-area: 11 / 1 / 16 / 2; }
-        .smenu14 { grid-area: 11 / 2 / 12 / 7; }
-        .smenu15 { grid-area: 12 / 2 / 13 / 7; }
-        .smenu16 { grid-area: 13 / 2 / 14 / 7; }
-        .smenu17 { grid-area: 14 / 2 / 15 / 7; }
-        .smenu18 { grid-area: 15 / 2 / 16 / 7; }
-        .smenu19 { grid-area: 16 / 1 / 17 / 7; background: #222233; }
+    .smenu1 { grid-area: 1 / 1 / 6 / 2; }
+    .smenu2 { grid-area: 1 / 2 / 2 / 7; }
+    .smenu3 { grid-area: 2 / 2 / 3 / 7; }
+    .smenu4 { grid-area: 3 / 2 / 4 / 7; }
+    .smenu5 { grid-area: 4 / 2 / 5 / 7; }
+    .smenu6 { grid-area: 5 / 2 / 6 / 7; }
+    .smenu7 { grid-area: 6 / 1 / 11 / 2;}
+    .smenu8 { grid-area: 6 / 2 / 7 / 7; }
+    .smenu9 { grid-area: 7 / 2 / 8 / 7; }
+    .smenu10 { grid-area: 8 / 2 / 9 / 7; }
+    .smenu11 { grid-area: 9 / 2 / 10 / 7; }
+    .smenu12 { grid-area: 10 / 2 / 11 / 7; }
+    .smenu13 { grid-area: 11 / 1 / 16 / 2; }
+    .smenu14 { grid-area: 11 / 2 / 12 / 7; }
+    .smenu15 { grid-area: 12 / 2 / 13 / 7; }
+    .smenu16 { grid-area: 13 / 2 / 14 / 7; }
+    .smenu17 { grid-area: 14 / 2 / 15 / 7; }
+    .smenu18 { grid-area: 15 / 2 / 16 / 7; }
+    .smenu19 { grid-area: 16 / 1 / 17 / 7; background: #222233; }
+
 
 @media only screen and (min-width: 800px) {
 .outerframe1 {
-    width: 100%;
+    width: 100vw;
     display: flex;
-    justify-content: center;
+    align-items: center;
 }
 .outerframe2 {
+    width: 800px;    
+}
+.outerframe3 {
     width: 800px;
+    display: flex;
+    flex-direction: column;
 }
 .topbanner, .midbanner {
     width: 800px;
@@ -226,11 +255,15 @@ A:hover { text-decoration: none; color: #399993; }
 .outerframe2 {
     width: 1100px;
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     height: 100%;
 }
 .outerframe3 {
     width: 800px;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
 }
 .smenu {
     display: grid;
@@ -238,4 +271,21 @@ A:hover { text-decoration: none; color: #399993; }
 .hbutton {
     display: none;
 }
+}
+
+@keyframes slidein {
+    from {
+        width: 0vw;
+    }
+    to {
+        width: 90vw;
+    }
+}
+@keyframes slideout {
+    from {
+        width: 90vw;
+    }
+    to {
+        width: 0vw;
+    }
 }
