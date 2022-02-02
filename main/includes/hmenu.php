@@ -9,7 +9,7 @@
     <div class="hmenu8" onclick="location.href='drafting.php';">Drafting</div>
     <div class="hmenu9">Shipyard</div>
     <div class="hmenu10" onclick="location.href='mining.php';">Mining</div>
-    <div class="hmenu11">Research</div>
+    <div class="hmenu11" onclick="location.href='research.php';">Research</div>
     <div class="hmenu12">Heavy Weapons</div>
     <div class="hmenu13">Deployment</div>
     <div class="hmenu14">Star Map</div>

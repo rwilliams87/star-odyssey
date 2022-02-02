@@ -14,6 +14,20 @@ function hamburgerMenu() {
 
 }
 
-function graphMainPopulation() {
+function messagesBoxCount(count, display) {
+    let chars = document.getElementById(count).value.length;
+    let trueLength = 255 - chars;
+    document.getElementById(display).innerHTML = `${trueLength} characters remaining.`;
+}
 
+function messagesCheckAll(source) {
+    let checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    for (let i = 0; i < checkboxes.length; i++) {
+        if (checkboxes[i] != source) checkboxes.checked = source.checked;
+    }
+}
+
+function messagesConfirmDelete() {
+    document.getElementById('confirm').style.display = 'block';
+    document.getElementById('delete').style.display = 'none';
 }

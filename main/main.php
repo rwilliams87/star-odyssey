@@ -69,7 +69,7 @@
                         <div class='div22'><div class='amotd'>Alliance message of the day will go here!</div></div>
                     </div>
                 </div>
-                <div>test</div>
+                
                 <!-- End Main Area | Begin Bottom Banner -->
                 <!-- End Bottom Banner -->
             </div>

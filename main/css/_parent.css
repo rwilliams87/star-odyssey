@@ -205,7 +205,8 @@ form { width: 100% }
         align-items: center;
         justify-content: center;
     }
-    .smenu2:hover, .smenu8:hover, .smenu10:hover { background: #111133; }
+    .smenu2:hover, .smenu8:hover, .smenu10:hover, 
+    .smenu5:hover, .smenu11:hover { background: #111133; }
     
     .smenu1 { grid-area: 1 / 1 / 6 / 2; }
     .smenu2 { grid-area: 1 / 2 / 2 / 7; }

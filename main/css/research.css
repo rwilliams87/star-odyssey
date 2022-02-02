@@ -1,0 +1,155 @@
+form {
+  margin: 0;
+}
+
+.tip {
+    width: 80%;
+    box-sizing: border-box;
+    border: 3px solid #FFFFFF;
+    padding: 10px;
+    align-self: center;
+}
+.chartContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.smallInputNumber {
+    height: 24px;
+    width: 55px;
+    background: #000000;
+    color: #FFFFFF;
+    border: 2px solid white;
+    box-sizing: border-box;
+}
+
+.unlockButton {
+  height: 24px;
+  width: 55px;
+  background: #000000;
+  color: #FFFFFF;
+  border: 2px solid white;
+  box-sizing: border-box;
+}
+
+.selector {  
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 3px 3px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "selectorHeader selectorHeader selectorHeader selectorHeader"
+      "selectorAttack selectorDefense selectorHeavy selectorSpecial";
+    width: 100%;
+    border-top: 3px solid black;
+    border-left: 3px solid black;
+    border-right: 3px solid black;
+    box-sizing: border-box;
+  }
+  .selector div { display: flex; align-items: center; justify-content: center; min-height: 30px; box-sizing: border-box; padding-left: 5px; padding-right: 5px; }
+  .selectorHeader { grid-area: selectorHeader; background: #C1CDD5; color: #000000; }
+  .selectorAttack { grid-area: selectorAttack; background: #333355; }
+  .selectorDefense { grid-area: selectorDefense; background: #333355; }
+  .selectorHeavy { grid-area: selectorHeavy; background: #333355; }
+  .selectorSpecial { grid-area: selectorSpecial; background: #333355; }
+  .selectorAttack:hover, .selectorDefense:hover, .selectorHeavy:hover, .selectorSpecial:hover { background: #111133}
+
+
+
+/* Start Main Section */
+
+.sectionHeader {  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  gap: 3px 3px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    ".";
+  width: 100%;
+  box-sizing: border-box;
+  border-top: 3px solid black;
+  border-left: 3px solid black;
+  border-right: 3px solid black;
+}
+.sectionHeader div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #C1CDD5;
+  color: #000000;
+  min-height: 30px;
+  box-sizing: border-box;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+/* Begin CSS For Locked Attack Ships */ 
+
+.locked {  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 3px 3px;
+  grid-auto-flow: row;
+  grid-template-rows: 30px;
+  grid-auto-rows: auto;
+  grid-template-areas:
+    "locked-header locked-header locked-header"
+    "locked-body locked-body locked-button";
+  width: 100%;
+  box-sizing: border-box;
+  border-top: 3px solid black;
+  border-left: 3px solid black;
+  border-right: 3px solid black;
+}
+.locked div { display: flex; align-items: center; padding-left: 5px; padding-right: 5px; min-height: 30px; }
+.locked-header { grid-area: locked-header; background: #222233; justify-content: center; }
+.locked-body { grid-area: locked-body; background: #333355; }
+.locked-button { grid-area: locked-button; background: #333355; justify-content: center; }
+
+.researchComplete {  
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  gap: 3px 3px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    ".";
+  width: 100%;
+  box-sizing: border-box;
+  border-top: 3px solid black;
+  border-left: 3px solid black;
+  border-right: 3px solid black;
+  background: #222233;
+}
+.researchComplete div { display: flex; justify-content: center; align-items: center; min-height: 30px; }
+
+.researchWIP {  
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  gap: 3px 3px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "researchWIP-header researchWIP-header researchWIP-header"
+    "researchWIP-section1 researchWIP-section1 researchWIP-section2"
+    "researchWIP-assigned researchWIP-assigned researchWIP-add"
+    "researchWIP-header3 researchWIP-header3 researchWIP-header4"
+    "researchWIP-points researchWIP-points researchWIP-remove";
+  width: 100%;
+  box-sizing: border-box;
+  border-top: 3px solid black;
+  border-left: 3px solid black;
+  border-right: 3px solid black;
+}
+.researchWIP div { display: flex; align-items: center; padding-left: 5px; padding-right: 5px; min-height: 30px; }
+.researchWIP-header { grid-area: researchWIP-header; background: #222233; justify-content: center;}
+.researchWIP-section1 { grid-area: researchWIP-section1; background: #333355;}
+.researchWIP-section2 { grid-area: researchWIP-section2; background: #111133; }
+.researchWIP-assigned { grid-area: researchWIP-assigned; background: #333355; }
+.researchWIP-add { grid-area: researchWIP-add; background: #111133; }
+.researchWIP-header3 { grid-area: researchWIP-header3; background: #333355; }
+.researchWIP-header4 { grid-area: researchWIP-header4; background: #111133; }
+.researchWIP-points { grid-area: researchWIP-points; background: #333355; }
+.researchWIP-remove { grid-area: researchWIP-remove; background: #111133; }
