@@ -154,7 +154,7 @@ $bNum = 2;
                 <input type='checkbox' class='deleteCheck' onclick='messagesCheckAll(this)'>
               </div>
               <div class='deletebutton' style="background-color: #222233; grid-area: <?=$dNum?> / 2 / <?=$dNum1?> / 6; justify-content: flex-end;">
-                <input type='button' id='delete' name='fauxDelete' value='Delete Selected' class='inputButton' onclick='messagesConfirmDelete()'> &nbsp; &nbsp;
+                <input type='button' id='delete' name='fauxDelete' value='Delete Selected' class='inputButton' onclick='messagesConfirmDelete()'>
                 <input type='submit' id='confirm' name='deleteMessages' value='Confirm' class='inputButton' style="display: none;">
               </div>
             </div>

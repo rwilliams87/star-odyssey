@@ -31,3 +31,16 @@ function messagesConfirmDelete() {
     document.getElementById('confirm').style.display = 'block';
     document.getElementById('delete').style.display = 'none';
 }
+
+function researchConfirmUnlock(a, b) {
+    document.getElementById(a).style.display = 'none';
+    document.getElementById(b).style.display = 'block';
+}
+
+function change(selection) {
+    document.getElementById('attackCarrier').style.display = 'none';
+    document.getElementById('defenseCarrier').style.display = 'none';
+    document.getElementById('heavyCarrier').style.display = 'none';
+    document.getElementById('specialCarrier').style.display = 'none';
+    document.getElementById(selection).style.display = 'block';
+  }
