@@ -24,6 +24,24 @@
 
 .unlockButton {
   height: 24px;
+  width: 70px;
+  background: #000000;
+  color: #FFFFFF;
+  border: 2px solid white;
+  box-sizing: border-box;
+}
+
+.sButton {
+  height: 24px;
+  width: 70px;
+  background: #000000;
+  color: #FFFFFF;
+  border: 2px solid white;
+  box-sizing: border-box;
+}
+
+.numField {
+  height: 24px;
   width: 55px;
   background: #000000;
   color: #FFFFFF;
@@ -126,6 +144,37 @@
 .researchWIP {  
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  gap: 3px 3px;
+  grid-auto-flow: row;
+  grid-template-rows: 30px;
+  grid-auto-rows: auto;
+  grid-template-areas:
+    "wipHeader wipHeader wipHeader"
+    "wipAssigned wipAssigned wipAssignedValue"
+    "wipPoints wipPoints wipPointsValue"
+    "wipAdd wipRemove wipSubmit";
+  width: 100%;
+  box-sizing: border-box;
+  border-top: 3px solid black;
+  border-left: 3px solid black;
+  border-right: 3px solid black;
+}
+.researchWIP div { display: flex; align-items: center; min-height: 30px; padding-left: 5px; padding-right: 5px;}
+.wipHeader { grid-area: wipHeader; background: #222233; justify-content: center; }
+.wipAssigned { grid-area: wipAssigned; background: #333355; }
+.wipAssignedValue { grid-area: wipAssignedValue; background: #111133; justify-content: center; }
+.wipPoints { grid-area: wipPoints; background: #333355; }
+.wipPointsValue { grid-area: wipPointsValue; background: #111133; justify-content: center; }
+.wipAdd { grid-area: wipAdd; background: #333355; }
+.wipRemove { grid-area: wipRemove; background: #333355; }
+.wipSubmit { grid-area: wipSubmit; background: #111133; justify-content: center; }
+
+
+/*
+.researchWIP {  
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
   gap: 3px 3px;
   grid-auto-flow: row;
@@ -151,3 +200,21 @@
 .researchWIP-header4 { grid-area: researchWIP-header4; background: #111133; justify-content: center; }
 .researchWIP-points { grid-area: researchWIP-points; background: #333355; }
 .researchWIP-remove { grid-area: researchWIP-remove; background: #111133; justify-content: center; }
+
+.researchSubmit {  
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  gap: 3px 3px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    ".";
+  width: 100%;
+  box-sizing: border-box;
+  border-top: 3px solid black;
+  border-left: 3px solid black;
+  border-right: 3px solid black;
+  background: #111133;
+}
+.researchSubmit div { display: flex; justify-content: center; align-items: center; min-height: 30px; }
+*/

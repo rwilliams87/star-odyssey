@@ -38,9 +38,11 @@ function researchConfirmUnlock(a, b) {
 }
 
 function change(selection) {
-    document.getElementById('attackCarrier').style.display = 'none';
-    document.getElementById('defenseCarrier').style.display = 'none';
-    document.getElementById('heavyCarrier').style.display = 'none';
-    document.getElementById('specialCarrier').style.display = 'none';
-    document.getElementById(selection).style.display = 'block';
-  }
+  document.getElementById('attackCarrier').style.display = 'none';
+  document.getElementById('defenseCarrier').style.display = 'none';
+  document.getElementById('heavyCarrier').style.display = 'none';
+  document.getElementById('specialCarrier').style.display = 'none';
+  document.getElementById(selection).style.display = 'block';
+}
+
+  
